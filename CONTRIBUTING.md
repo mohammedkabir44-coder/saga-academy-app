@@ -30,7 +30,8 @@ Please be respectful and inclusive in all interactions. We are committed to prov
 
 - **Flutter**: Version 3.16 or higher
 - **Node.js**: Version 18 or higher
-- **Firebase CLI**: Latest version
+- **Neon Database**: Account at neon.tech (for production)
+- **PostgreSQL**: Version 15+ (for local development, optional with Docker)
 - **Git**: Latest version
 
 ### Mobile App Setup
@@ -46,7 +47,13 @@ flutter run
 ```bash
 cd backend
 npm install
-npm run serve  # Start Firebase emulators
+npm run dev  # Start development server with hot reload
+```
+
+Run database migrations:
+
+```bash
+npm run db:migrate
 ```
 
 ### Web Dashboard Setup

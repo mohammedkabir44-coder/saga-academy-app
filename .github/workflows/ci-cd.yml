@@ -88,14 +88,16 @@ jobs:
       - name: Build TypeScript
         run: npm run build
       
-      - name: Deploy to Firebase (on main branch)
+      - name: Deploy Backend (on main branch)
         if: github.ref == 'refs/heads/main'
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        # Deploy to your preferred platform (Railway, Render, Heroku, etc.)
+        # Example for Railway:
+        # uses: superfly/flyctl-actions@v1
+        # with:
+        #   args: "deploy"
+        # env:
+        #   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+        run: echo "Deploy backend to your hosting platform"
 
   # Web Dashboard Tests & Build
   web-dashboard-ci:
@@ -132,14 +134,16 @@ jobs:
       - name: Build Next.js Application
         run: npm run build
       
-      - name: Deploy to Firebase Hosting (on main branch)
+      - name: Deploy Web Dashboard (on main branch)
         if: github.ref == 'refs/heads/main'
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        # Deploy to Vercel, Netlify, or your preferred hosting
+        # Example for Vercel:
+        # uses: amondnet/vercel-action@v20
+        # with:
+        #   vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        #   vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+        #   vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: echo "Deploy web dashboard to your hosting platform"
 
   # Security Scan
   security-scan:

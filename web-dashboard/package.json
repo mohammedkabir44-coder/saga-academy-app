@@ -22,7 +22,8 @@
     "react",
     "dashboard",
     "education",
-    "firebase"
+    "neon",
+    "postgresql"
   ],
   "author": "Saga Science Academy",
   "license": "MIT",
@@ -30,8 +31,6 @@
     "next": "^14.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "firebase": "^10.7.1",
-    "react-firebase-hooks": "^5.1.1",
     "@tanstack/react-query": "^5.13.4",
     "zustand": "^4.4.7",
     "axios": "^1.6.2",
